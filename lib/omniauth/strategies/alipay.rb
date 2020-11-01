@@ -76,7 +76,7 @@ module OmniAuth
           app_id: options.client_id,
           app_private_key: options.app_private_key,
           alipay_public_key: options.alipay_public_key,
-          sign_type: 'RSA'
+          sign_type: options.sign_type || 'RSA2'
         )
         params = alipay_client.sdk_execute(
           method: 'alipay.user.info.share',
@@ -95,7 +95,7 @@ module OmniAuth
           app_id: options.client_id,
           app_private_key: options.app_private_key,
           alipay_public_key: options.alipay_public_key,
-          sign_type: 'RSA'
+          sign_type: options.sign_type || 'RSA'
         )
         params = alipay_client.sdk_execute(
           method: 'alipay.system.oauth.token',
